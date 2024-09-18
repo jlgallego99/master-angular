@@ -14,5 +14,7 @@ import { CurrencyPipe } from "@angular/common";
 export class InvestmentResultsComponent {
   private investmentService = inject(InvestmentService);
 
-  results = computed(() => this.investmentService.resultData());
+  get results() {
+    return this.investmentService.resultData;
+  }
 }
