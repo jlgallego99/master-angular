@@ -3,6 +3,7 @@ import { Routes } from "@angular/router";
 import { NoTaskComponent } from "./app/tasks/no-task/no-task.component";
 import { UserTasksComponent } from "./app/users/user-tasks/user-tasks.component";
 import { NewTaskComponent } from "./app/tasks/new-task/new-task.component";
+import { NotFoundComponent } from "./app/not-found/not-found.component";
 
 export const appRoutes: Routes = [
   {
@@ -14,6 +15,11 @@ export const appRoutes: Routes = [
     component: UserTasksComponent,
     children: [
       {
+        path: '',
+        redirectTo: 'tasks',
+        pathMatch: 'prefix',
+      },
+      {
         path: 'tasks',
         component: TasksComponent
       },
@@ -23,4 +29,8 @@ export const appRoutes: Routes = [
       }
     ]
   },
+  {
+    path: '**',
+    component: NotFoundComponent
+  }
 ]
