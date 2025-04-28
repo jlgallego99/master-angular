@@ -67,6 +67,7 @@ a {
 a:hover,
 a:active {
   color: #d0c2e1;
+  cursor: pointer;
 }
 
 button[type="submit"] {
